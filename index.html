@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Manage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="header-left">
+          <h2>Money<span>Manage</span></h2>
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </header>
+
+      <section class="balance-card">
+        <p>Total Saldo</p>
+        <h1>Rp <span id="total">0</span></h1>
+      </section>
+
+      <section class="summary">
+        <div class="summary-card income">
+          <div class="summary-icon"><i class="fas fa-arrow-down"></i></div>
+          <div class="summary-info">
+            <p>Pemasukan</p>
+            <h3>Rp <span id="total-tambah">0</span></h3>
+          </div>
+        </div>
+        <div class="summary-card expense">
+          <div class="summary-icon"><i class="fas fa-arrow-up"></i></div>
+          <div class="summary-info">
+            <p>Pengeluaran</p>
+            <h3>Rp <span id="total-kurang">0</span></h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="transaction-forms">
+        <div class="form-card">
+          <h3><i class="fas fa-plus-circle"></i> Pemasukan</h3>
+          <form id="tambah">
+            <div class="input-group">
+              <input
+                type="number"
+                id="income-amount"
+                placeholder="Nominal uang"
+                name="tambah"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="income-note"
+                placeholder="Catatan"
+                name="catatan"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success">
+              Tambah Pemasukan
+            </button>
+          </form>
+        </div>
+
+        <div class="form-card">
+          <h3><i class="fas fa-minus-circle"></i> Pengeluaran</h3>
+          <form id="kurang">
+            <div class="input-group">
+              <input
+                type="number"
+                id="expense-amount"
+                placeholder="Nominal uang"
+                name="kurang"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="expense-note"
+                placeholder="Catatan"
+                name="catatan"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-danger">
+              Catat Pengeluaran
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div class="history-header">
+          <h3>Riwayat Transaksi</h3>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+      </section>
+
+      <div class="reset-container">
+        <button id="btnReset" class="btn btn-outline" title="Hapus Semua Data">
+          <i class="fas fa-trash-alt"></i> Hapus Semua Data
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
